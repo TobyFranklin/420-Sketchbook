@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 122984835679663914}
   - component: {fileID: 758697085250118215}
   - component: {fileID: 1447747412763263062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Voxel Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
