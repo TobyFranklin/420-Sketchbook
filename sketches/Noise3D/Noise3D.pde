@@ -76,10 +76,11 @@ void draw() {
 
   translate(width/2, height/2);
 
-  rotateX(map(mouseY, 0, width, -PI, PI));
+  rotateX(map(mouseY, 0, width, -1, 1));
   rotateY(map(mouseX, 0, width, -PI, PI));
 
-  translate(-dimOfBlocks *sizeOfBlocks / 2, -dimOfBlocks * sizeOfBlocks /2);
+float d = -dimOfBlocks * sizeOfBlocks /2;
+  translate(d,d,d);
 
   for (PVector pos : blox) {
     pushMatrix();
