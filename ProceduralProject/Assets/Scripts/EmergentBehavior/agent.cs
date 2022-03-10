@@ -52,7 +52,6 @@ public class agent : MonoBehaviour
         Vector3 desiredVelocity = target - position;
         desiredVelocity.Normalize();
         desiredVelocity *= maxSpeed;
-        Debug.Log(desiredVelocity);
 
         // find steering force
         // steering force = desired velocity
@@ -62,7 +61,7 @@ public class agent : MonoBehaviour
 
 
         steeringForce *= maxSpeed;
-
+        Debug.Log(steeringForce);
 
         force += steeringForce;
     }
