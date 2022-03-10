@@ -7,20 +7,23 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     public GameObject agentPrefab;
     public GameObject bigFishprefab;
+
     private GameObject b;
+    private List<GameObject> agents = new List<GameObject>();
 
     void Start()
     {
-        GameObject b = bigFishprefab;
-        Instantiate(b);
+        b = Instantiate(bigFishprefab);
     }
 
-    void update()
+    void Update()
     {
         
-            agent a = new agent();
-            a.big = b;
-            Instantiate(a);
-        
+            if(agents.Count < 1)
+        {
+            GameObject a = Instantiate(agentPrefab);
+            a.GetComponent<agent>().bigFish = b;
+            agents.Add(a);
+        }
     }
 }

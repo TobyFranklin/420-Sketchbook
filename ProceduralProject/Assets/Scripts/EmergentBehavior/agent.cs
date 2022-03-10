@@ -4,42 +4,43 @@ using UnityEngine;
 
 public class agent : MonoBehaviour
 {
-    public GameObject big;
+    public GameObject bigFish;
     private Vector3 position = new Vector3();
     private Vector3 velocity = new Vector3();
     private Vector3 force = new Vector3();
     private float mass = 1;
-    private float maxSpeed = 10;
-    private float maxForce = 10;
+    private float maxForce = 1;
 
     private Vector3 target = new Vector3();
     private float targetAngle = 0;
-    private float targetRadius = 100;
+    private float targetRadius = 10;
     private float targetSpeed = 0;
-
-    void OnStart()
+    private float maxSpeed;
+    void Start()
     {
-        position = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), Random.Range(-100, 100));
-        velocity = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
-        mass = Random.Range(50, 100);
-        maxForce = Random.Range(5, 15);
+        position = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+        velocity = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
+        mass = Random.Range(10, 20);
+        maxForce = Random.Range(5, 10);
         targetAngle = Random.Range(-Mathf.PI, Mathf.PI);
         targetRadius = Random.Range(50, 150);
-        maxSpeed = Random.Range(2, 15);
-        targetSpeed = maxForce * (float).05;
+        targetSpeed = maxForce * 5;
+        maxSpeed = .1f;
     }
 
-    void update()
+    void Update()
     {
-
-        target = big.transform.position;
+        target = bigFish.transform.position;
 
         targetAngle += targetSpeed;
-        target.x += (targetRadius * Mathf.Cos(targetAngle));
-        target.y += (targetRadius * Mathf.Sin(targetAngle));
+
 
         doSteeringForce();
         doEuler();
+
+        transform.position = position;
+
+        transform.rotation = Quaternion.LookRotation(velocity);
     }
 
     void doSteeringForce()
@@ -51,13 +52,17 @@ public class agent : MonoBehaviour
         Vector3 desiredVelocity = target - position;
         desiredVelocity.Normalize();
         desiredVelocity *= maxSpeed;
+        Debug.Log(desiredVelocity);
 
         // find steering force
         // steering force = desired velocity
 
         Vector3 steeringForce = desiredVelocity - velocity;
         steeringForce.Normalize();
+
+
         steeringForce *= maxSpeed;
+
 
         force += steeringForce;
     }

@@ -12,25 +12,24 @@ public class bigfish : MonoBehaviour
     private void Start()
     {
         position = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), Random.Range(-100, 100));
-
+        transform.position = position;
     }
 
-    void update()
+    void Update()
     {
 
         if (--cooldown <= 0)
         {
             target1 = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), Random.Range(-100, 100));
 
-            cooldown = (int)Random.Range(30, 60);
+            cooldown = (int)Random.Range(60, 120);
         }
 
-        target2.x += (target1.x - target2.x) * (float).01;
-        target2.y += (target1.y - target2.y) * (float).01;
-        target2.z += (target1.z - target2.z) * (float).01;
+        target2 += (target1 - target2) * (float).01;
 
-        position.x += (target2.x - position.x) * (float).01;
-        position.y += (target2.y - position.y) * (float).01;
-        position.z += (target2.z - position.z) * (float).01;
+        position += (target2- position) * (float).01;
+
+
+        transform.position = position;
     }
 }
