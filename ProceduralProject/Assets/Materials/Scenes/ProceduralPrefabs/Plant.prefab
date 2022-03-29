@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 0
-  iterations: 13
-  turnDegrees: 23
-  twistDegrees: -14
-  alignWithParent: 0.26441094
+  iterations: 8
+  turnDegrees: 21
+  twistDegrees: 20
+  alignWithParent: 0.17123649
   branchNodeDis: 2
   branchNodeTrunk: 1
   branchType: 5
