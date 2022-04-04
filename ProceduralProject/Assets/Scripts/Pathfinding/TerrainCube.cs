@@ -51,7 +51,7 @@ public class TerrainCube : MonoBehaviour
         bool isShowingWall = (type == TerrainType.Wall);
 
         float y = isShowingWall ? .44f : 0f;
-        float h = isShowingWall ? 1.1f : .2f; ;
+        float h = isShowingWall ? 1.1f : .2f;
         box.size = new Vector3(1, h, 1);
         box.center = new Vector3(0, y, 0);
 
