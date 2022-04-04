@@ -115,7 +115,7 @@ public class Minion : MonoBehaviour
 
         if (minionType == minionTypes.melee)
         {
-            maxHealth = 50;
+            maxHealth = 45;
             health = maxHealth;
             damage = 6;
             attackSpeed = 1;

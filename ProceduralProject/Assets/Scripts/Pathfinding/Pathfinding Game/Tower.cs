@@ -18,7 +18,7 @@ public class Tower : MonoBehaviour
     public Transform bottom;
     public Transform cylinder;
 
-    public float health = 50;
+    public float health = 100;
     public float attackRange = 9;
     public bool isDestroyed = false;
 

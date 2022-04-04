@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
     private void Attack()
     {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Bullet>().MakeStats(target, (int)team, 1, 15, transform.position, 50);
+            bullet.GetComponent<Bullet>().MakeStats(target, (int)team, 1, 15, transform.position, 15);
         
     }
 }
