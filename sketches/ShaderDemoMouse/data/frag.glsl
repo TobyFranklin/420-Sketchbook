@@ -16,7 +16,7 @@ uniform vec2 mouse;
 void main(){
 
     float ratio = texOffset.x / texOffset.y;
-
+    
     vec2 uv = vertTexCoord.xy - mouse;
     float dis = length(uv);
 
