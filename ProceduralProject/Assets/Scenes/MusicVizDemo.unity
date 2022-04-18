@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 142725626}
   - component: {fileID: 142725625}
   - component: {fileID: 142725624}
+  - component: {fileID: 142725627}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -158,7 +159,7 @@ Camera:
   m_GameObject: {fileID: 142725623}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -207,6 +208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142725627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142725623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c691996fbd2e8144b509c6c204425a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 9147a684254a7a243a8c4fa35a6ac97a, type: 3}
+  noiseTexture: {fileID: 2800000, guid: 44d4a8b18a6fcee4b938760a0d9ee52b, type: 3}
 --- !u!1 &976944146
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +236,7 @@ GameObject:
   - component: {fileID: 976944149}
   - component: {fileID: 976944150}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: MusicViz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +369,7 @@ MonoBehaviour:
   amp: 10.56
   raduis: 500
   numBands: 512
-  prefabOrb: {fileID: 6301826380943851958, guid: 615209f386d2bba4aae7f73ef2a7cb3a, type: 3}
+  prefabOrb: {fileID: 8609793042189312896, guid: 615209f386d2bba4aae7f73ef2a7cb3a, type: 3}
 --- !u!120 &976944150
 LineRenderer:
   m_ObjectHideFlags: 0

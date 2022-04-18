@@ -7,6 +7,7 @@ Shader "TobysShaders/Disolve"
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _Threshold ("Threshold", Range(0,1)) = 0.5
+        _TimOffset ("Time Offset", Float) = 0.5
     }
     SubShader
     {
@@ -31,6 +32,7 @@ Shader "TobysShaders/Disolve"
         half _Metallic;
         fixed4 _Color;
         float _Threshold;
+        float _TimeOffset;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
