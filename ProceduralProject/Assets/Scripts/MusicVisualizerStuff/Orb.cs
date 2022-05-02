@@ -14,7 +14,7 @@ public class Orb : MonoBehaviour
     void Start()
     {
         viz = SimpleViz1.viz;
-        GetComponent<MeshRenderer>().material.SetFloat("_TimOffset", Random.Range(0, 2 * Mathf.PI));
+        GetComponent<MeshRenderer>().material.SetFloat("_TimeOffset", Random.Range(0, 2 * Mathf.PI));
         body = GetComponent<Rigidbody>();
     }
 

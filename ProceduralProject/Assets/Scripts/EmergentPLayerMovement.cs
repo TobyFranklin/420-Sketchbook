@@ -7,12 +7,18 @@ public class EmergentPLayerMovement : MonoBehaviour
     public CharacterController controller;
     public Spawner spawner;
 
+    public EmergentPLayerMovement instance;
     public float speed = 12f;
     public float jumpHeight = 20f;
 
     Vector3 velocity;
     bool isGrounded;
 
+private void Awake()
+    {
+        instance = this;
+    }
+    
     // Update is called once per frame
     void Update()
     {

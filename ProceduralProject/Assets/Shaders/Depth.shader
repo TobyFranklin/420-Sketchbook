@@ -43,11 +43,11 @@ Shader "TobysShaders/Depth"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 depth = tex2D(_CameraDepthTexture, i.uv.).r;
+                //fixed4 depth = tex2D(_CameraDepthTexture, i.uv.).r;
                
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
-                col *= depth; //(1-depth);
+               // col *= depth; //(1-depth);
                 
                 //depth = 1 - ((1 - Liner01Depth(depth)) / 10.0);
                 //depth = LinearEyeDepthDEPTH(depth);

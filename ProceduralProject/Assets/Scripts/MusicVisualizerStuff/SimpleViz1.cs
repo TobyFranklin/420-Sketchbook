@@ -12,6 +12,8 @@ public class SimpleViz1 : MonoBehaviour
     public float ringHieght = 4;
     public float ringRadius = 50;
     public int numBands = 512;
+
+    public float avgAmp =0;
     public Orb prefabOrb;
     private AudioSource player;
     private LineRenderer line;
@@ -66,7 +68,7 @@ public class SimpleViz1 : MonoBehaviour
 
         Vector3[] points = new Vector3[samples];
 
-        float avgAmp =0;
+        avgAmp =0;
 
         for (int i = 0; i < data.Length; i++)
         {
@@ -89,7 +91,7 @@ public class SimpleViz1 : MonoBehaviour
 
         avgAmp /= samples;
 
-        ppShader.UpdateAmp();
+        //ppShader.UpdateAmp();
 
         line.SetPositions(points);
     }

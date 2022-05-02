@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum MazeWallType
+{
+    Open,
+
+    Wall, 
+
+    Slime
+}
+public class MazeWall : MonoBehaviour
+{
+    public Transform wall;
+    public Transform slime;
+    BoxCollider box;
+    public MazeWallType type = MazeWallType.Open;
+    public float MoveCost {
+        get{
+            if (type == MazeWallType.Open) return 1;
+            if (type == MazeWallType.Wall) return 9999;
+            if (type == MazeWallType.Slime) return 10;
+            return 1;
+        }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if(Random.Range(0,100) < 20) type = MazeWallType.Wall;
+        box = GetComponent<BoxCollider>();
+        UpdateArt();
+    }
+
+    // Update is called once per frame
+    void OnMouseDown(){
+
+        //changes this terrain cubes state
+        type += 1;
+        if ((int)type > 2) type = 0;
+
+        //change the artwork of the terrain cube
+        UpdateArt();
+
+        //rebuild our array of nodes
+        if(GridController.singleton) GridController.singleton.MakeNodes();
+    }
+
+    void UpdateArt(){
+
+        bool isShowingWall = (type == MazeWallType.Wall);
+
+        float y = isShowingWall ? .44f : 0f;
+        float h = isShowingWall ? 1.1f : .2f;
+        box.size = new Vector3(1, h, 1);
+        box.center = new Vector3(0, y, 0);
+
+
+        if (wall)  wall.gameObject.SetActive(isShowingWall);
+        if (slime) slime.gameObject.SetActive(type == MazeWallType.Slime);
+    }
+}

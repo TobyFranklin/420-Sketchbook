@@ -16,10 +16,12 @@ public class PostProcessing : MonoBehaviour
 
         mat.SetTexture("_NoiseTex", noiseTexture);
     }
-    public void UpdateAmp()
+    public void UpdateAmp(){
+
+    }
 
     void Update(){
-        mat.SetFloat("_Amp", )
+        mat.SetFloat("_Amp", 12312);
     }
     // Update is called once per frame
     void OnRenderImage(RenderTexture src, RenderTexture dst)
